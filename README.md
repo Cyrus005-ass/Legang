@@ -46,3 +46,4 @@ Sur GitHub Pages : branche `main`, dossier racine du dépôt, fichier d’entré
 ## Licence / contenu
 
 Les textes et l’identité artistique relèvent de leurs auteurs respectifs. Ce dépôt est fourni à des fins de présentation du site.
+"# Legang" 

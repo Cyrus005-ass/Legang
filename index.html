@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Vano Baby — 10 ANS DU GANG</title>
+  <meta name="description" content="Vano Baby, Le Sorcier Vivant — 10 ans de carrière, de Grand-Popo au sommet du Bénin.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:ital,wght@0,300;0,400;0,600;0,700;0,900;1,300;1,400&family=Barlow:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" type="image/png" href="assets/images/10ans.png">
+</head>
+<body>
+
+
+<!--AUDIO-->
+<audio id="snd" loop preload="none" playsinline></audio>
+<button id="snd-btn" class="snd-btn" aria-label="Musique">
+  <span class="bars"><i></i><i></i><i></i><i></i><i></i></span>
+</button>
+
+<!--MODAL MUSIQUE-->
+<dialog id="music-modal" class="mmodal">
+  <p class="mmodal__q">Lire la musique ?</p>
+  <div class="mmodal__btns">
+    <button id="music-yes" class="mmodal__btn mmodal__btn--yes">Oui</button>
+    <button id="music-no"  class="mmodal__btn mmodal__btn--no">Non</button>
+  </div>
+</dialog>
+
+<!-- ════════════════════════════════════════════
+     PAGE 1 — SPLASH (avant d'entrer)
+════════════════════════════════════════════ -->
+<div id="splash" class="splash">
+
+  <!-- Photo pleine hauteur à GAUCHE -->
+  <div class="splash__photo">
+    <img src="assets/images/655916326_1478270823659355_7221547943626372223_n.jpg"
+         alt="Vano Baby — Le Sorcier Vivant"
+         class="splash__img">
+    <div class="splash__photo-vignette"></div>
+    <!-- Ligne rouge séparatrice -->
+    <div class="splash__redline"></div>
+  </div>
+
+  <!-- Texte + bouton à DROITE -->
+  <div class="splash__right">
+    <div class="splash__content">
+
+      <p class="splash__eyebrow">Le Sorcier Vivant &nbsp;·&nbsp; 2015 — 2025</p>
+
+      <h1 class="splash__title">
+        <span>10 ANS</span>
+        <span class="splash__title--red">DU GANG</span>
+      </h1>
+
+      <!-- Ressenti / texte émotionnel -->
+      <div class="splash__feels">
+        <p>
+          Il y a 10 ans, un gamin de Cotonou entre dans un studio <em>par hasard</em>.
+          Il n'avait pas de nom, pas d'argent, pas de plan.
+        </p>
+        <p>
+          Il avait juste une fille à nourrir,
+          une voix que personne n'avait encore entendue,
+          et une <strong>faim de réussir</strong> que rien ne pouvait éteindre.
+        </p>
+        <p>
+          Aujourd'hui, ce gamin <strong>règne</strong>.
+          Trois fois Artiste de l'année. Des millions d'âmes touchées.
+          Un empire construit brique par brique, silence par silence.
+        </p>
+        <p>
+          Ce site, c'est son histoire.
+          Pas un résumé. <strong>Une légende.</strong>
+        </p>
+      </div>
+
+      <div class="splash__bottom">
+        <p class="splash__hint">↓ Cliquer pour entrer</p>
+        <button id="enter-btn" class="splash__cta">
+          <span class="splash__cta-text">Entrer dans le gang</span>
+          <span class="splash__cta-icon">→</span>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Numéro en filigrane -->
+    <div class="splash__watermark" aria-hidden="true">10</div>
+  </div>
+
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     PAGE 2 — SITE PRINCIPAL (caché au départ)
+════════════════════════════════════════════ -->
+<div id="site" class="site site--hidden">
+
+  <!-- ── NAV ── -->
+  <header id="nav" class="nav">
+    <a href="#hero" class="nav__logo">VANO <em>BABY</em></a>
+    <button id="burger" class="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <nav class="nav__links" id="nav-links">
+      <a href="#story">Histoire</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#deux-deux">Le Chef</a>
+      <a href="#famille">Famille</a>
+      <a href="#musique">Musique</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- ── HERO : plusieurs photos en fondu (diaporama) ── -->
+  <section id="hero" class="hero">
+    <div class="hero__bg">
+      <div class="hero__slideshow" aria-hidden="true">
+        <img src="assets/images/502414146_4203085899937398_1830078569535965417_n.jpg" alt="" class="hero__slide is-active">
+        <img src="assets/images/516406131_18484441408070102_5625106205095065288_n.jpg" alt="" class="hero__slide">
+        <img src="assets/images/494258113_4173503606228961_5365194225050201857_n.jpg" alt="" class="hero__slide">
+        <img src="assets/images/464841510_18439459546070102_4102680828307635696_n.jpg" alt="" class="hero__slide">
+        <img src="assets/images/650171841_1466936848126086_365842473339802552_n.jpg" alt="" class="hero__slide">
+        <img src="assets/images/486309643_1191540162332424_9139137352705467035_n.jpg" alt="" class="hero__slide">
+      </div>
+      <div class="hero__dots" aria-hidden="true">
+        <span class="hero__dot is-active"></span>
+        <span class="hero__dot"></span>
+        <span class="hero__dot"></span>
+        <span class="hero__dot"></span>
+        <span class="hero__dot"></span>
+        <span class="hero__dot"></span>
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__grain"></div>
+      <div class="hero__glow"></div>
+    </div>
+    <div class="hero__body">
+      <p class="hero__over reveal">Le Sorcier Vivant</p>
+      <h2 class="hero__title reveal" data-delay="100">
+        <span>VANO</span><br><span class="red">BABY</span>
+      </h2>
+      <p class="hero__sub reveal" data-delay="200">10 ans de règne &nbsp;·&nbsp; 10 ans de gang.</p>
+      <div class="hero__ctas reveal" data-delay="300">
+        <a href="#story" class="btn btn--red">Découvrir l'histoire</a>
+        <a href="#musique" class="btn btn--ghost">Écouter</a>
+      </div>
+    </div>
+    <a href="#story" class="hero__scroll"><span></span><small>SCROLL</small></a>
+  </section>
+
+  <!-- ── CINEMA ── -->
+  <section class="cinema">
+    <div class="cinema__inner reveal">
+      <p class="cinema__pre">Ce n'est pas juste 10 ans…</p>
+      <h2 class="cinema__main">C'est une légende.</h2>
+      <p class="cinema__cite">"Je n'avais rien sauf la voix et l'obstination."</p>
+    </div>
+  </section>
+
+  <!-- ── STORY ── -->
+  <section id="story" class="story">
+    <div class="story__head reveal">
+      <span class="eyebrow">Son histoire</span>
+      <h2 class="sec-title">De l'ombre<br>à la lumière</h2>
+    </div>
+
+    <div class="sch reveal">
+      <div class="sch__num">01</div>
+      <div class="sch__img-col">
+        <div class="sch__frame"><img src="assets/images/501467047_4200091693570152_4295826902557799624_n.jpg" alt="Vano Baby jeune" loading="lazy"></div>
+        <p class="sch__caption">Cotonou — Grand-Popo</p>
+      </div>
+      <div class="sch__txt">
+        <span class="sch__tag">Les Racines</span>
+        <h3>Tout a commencé<br>dans l'ombre.</h3>
+        <p>De son vrai nom <strong>Aurel Sylvanus Adjivon</strong>, né le 9 mai 1994 à Sainte-Rita, Cotonou. Ses parents se séparent quand il a 4 ans. Son père l'élève seul — cuisinait, lavait ses vêtements, faisait tout pour lui.</p>
+        <p>Il prend quand même des chemins difficiles. Il fera de petits boulots. <strong>Il sera même docker au port.</strong></p>
+        <blockquote>"Je me voyais comme rien du tout."</blockquote>
+      </div>
+    </div>
+
+    <div class="sch sch--r reveal">
+      <div class="sch__num">02</div>
+      <div class="sch__img-col">
+        <div class="sch__frame"><img src="assets/images/494661429_4174495169463138_2785007588421375893_n.jpg" alt="Vano Baby studio" loading="lazy"></div>
+        <p class="sch__caption">Le déclic</p>
+      </div>
+      <div class="sch__txt">
+        <span class="sch__tag">Le Déclic · 2013</span>
+        <h3>La faim<br>de réussir.</h3>
+        <p>Sa fille naît. Tout change en une nuit. <strong>C'est elle qui m'a poussé vers le succès.</strong> Il entre dans un studio — par hasard. Il enregistre sa première chanson.</p>
+        <p>Sans argent, avec <strong>2 000 francs</strong>, il va voir un directeur radio. Le gars refuse l'argent… mais passe sa musique. Le lendemain — <strong>il entend sa propre voix à la radio pour la première fois.</strong></p>
+        <blockquote>"Mon cœur battait fort. Je n'arrivais même pas à y croire."</blockquote>
+      </div>
+    </div>
+
+    <div class="sch reveal">
+      <div class="sch__num">03</div>
+      <div class="sch__img-col">
+        <div class="sch__frame"><img src="assets/images/531019651_1299991148153991_7742747427152195139_n.jpg" alt="Vano Baby" loading="lazy"></div>
+        <p class="sch__caption">Naissance d'un nom</p>
+      </div>
+      <div class="sch__txt">
+        <span class="sch__tag">La Naissance · 2014</span>
+        <h3>Doji devient<br><span class="red">Vano Baby.</span></h3>
+        <p>Au début, il s'appelait <strong>Doji</strong>. Il cherche un nom artistique sans succès. Jusqu'au jour où — <strong>"Vano"</strong> vient de son prénom Sylvanus. <strong>"Baby"</strong> vient naturellement.</p>
+        <p>Il s'inscrit au <strong>concours MTN Découverte Talents</strong> avec une seule pensée : <em>"Si je ne fais pas top 3, c'est fini pour moi."</em></p>
+        <blockquote>"On annonce mon nom en premier. 5 millions. Je suis officiellement riche."</blockquote>
+      </div>
+    </div>
+
+    <div class="sch sch--r reveal">
+      <div class="sch__num">04</div>
+      <div class="sch__img-col">
+        <div class="sch__duo">
+          <div class="sch__duo-item">
+            <p class="sch__duo-label">Avant · La montée</p>
+            <div class="sch__frame">
+              <img src="assets/images/497485415_4187700661475922_4715090281159892068_n.jpg" alt="Vano Baby — la montée" loading="lazy">
+            </div>
+          </div>
+          <div class="sch__duo-item">
+            <p class="sch__duo-label">Après · Explosion nationale</p>
+            <div class="sch__frame">
+              <img src="assets/images/155344569_2927729280806406_1782785579910584270_n.jpg" alt="Vano Baby — concert, explosion nationale" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <p class="sch__caption">L'explosion nationale — avant &amp; après</p>
+      </div>
+      <div class="sch__txt">
+        <span class="sch__tag">L'Explosion · 2016</span>
+        <h3>Le Bénin tremble.<br>L'empire commence.</h3>
+        <p>Avec les 5 millions, il investit <strong>1,5 million dans sa musique</strong>, finance 3 clips vidéo publiés à Noël. Explosion totale. Le pays s'enflamme.</p>
+        <p><strong>« Adigoue Gboun Gboun »</strong> fait le tour du Bénin. Il est partout. Impossible de faire un événement sans lui. <strong>Top 10 personnalités béninoises les plus influentes 2016.</strong></p>
+        <blockquote>"On survit dans la rue, on construit notre empire."</blockquote>
+      </div>
+    </div>
+
+    <div class="sch reveal">
+      <div class="sch__num">05</div>
+      <div class="sch__img-col">
+        <div class="sch__frame"><img src="assets/images/470343686_18448341601070102_8319820959234865438_n.jpg" alt="Vano Baby" loading="lazy"></div>
+        <p class="sch__caption">La transformation</p>
+      </div>
+      <div class="sch__txt">
+        <span class="sch__tag">La Métamorphose · 2019</span>
+        <h3>Le Sorcier<br>se réinvente.</h3>
+        <p>Tout le monde attendait la bête. Il arrive avec une fleur. <strong>« Madame »</strong> — mélodie, douceur, vulnérabilité. Le Bénin est surpris. Et conquis une deuxième fois.</p>
+        <p>Suivi de <em>« Chéri Coco »</em>, <em>« Pas d'amis »</em>, <em>« Mikpo »</em>, <em>« Tu mérites tout »</em>. Un artiste complet. Une force durable.</p>
+        <blockquote>"Derrière la légende… il y a un père."</blockquote>
+      </div>
+    </div>
+
+    <div class="sch sch--r reveal">
+      <div class="sch__num">06</div>
+      <div class="sch__img-col">
+        <div class="sch__frame"><img src="assets/images/496764606_4186783908234264_2511013234916596419_n.jpg" alt="Vano Baby" loading="lazy"></div>
+        <p class="sch__caption">Règne absolu</p>
+      </div>
+      <div class="sch__txt">
+        <span class="sch__tag">La Domination · 2021—2025</span>
+        <h3>Triple couronne.<br><span class="red">Règne absolu.</span></h3>
+        <p><strong>Bénin Top 10 : Artiste de l'année 2021. 2022. 2024.</strong> Trois sacres consécutifs. Sans album — juste des singles. <em>« Fitè »</em> : 4,8 millions de vues en 2024.</p>
+        <p><strong>Universal Music Africa. Red Line Africa. Celtiis Bénin. Betclic</strong> (n°1 paris sportifs France, +11M utilisateurs). Une institution.</p>
+        <blockquote>"Le plus grand sacrifice pour rester au sommet ? Le bonheur. Parfois tu veux pleurer… mais tu ne peux pas."</blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── TIMELINE ── -->
+  <section id="parcours" class="parcours">
+    <div class="parcours__wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">2013 — 2025</span>
+        <h2 class="sec-title">10 ans de règne</h2>
+      </div>
+      <div class="tl">
+        <div class="tl__spine"></div>
+        <div class="tl__item reveal" data-s="left"><div class="tl__yr">2013</div><div class="tl__dot"></div><div class="tl__card"><h4>Premier coup de feu</h4><p>« Drague Azonto » — premier single par hasard. Une voix que le Bénin n'avait jamais entendue.</p></div></div>
+        <div class="tl__item reveal" data-s="right"><div class="tl__yr">2014</div><div class="tl__dot"></div><div class="tl__card"><h4>MTN — 5 millions FCFA</h4><p>1er prix national. 3 clips financés. Publiés à Noël. Explosion immédiate dans tout le pays.</p></div></div>
+        <div class="tl__item reveal" data-s="left"><div class="tl__yr">2016</div><div class="tl__dot"></div><div class="tl__card"><h4>« Adigoue Gboun Gboun »</h4><p>Top 10 personnalités influentes du Bénin. Ouverture CAN U17. France. Gabon. Le monde s'ouvre.</p></div></div>
+        <div class="tl__item reveal" data-s="right"><div class="tl__yr">2017</div><div class="tl__dot"></div><div class="tl__card"><h4>Les hits s'enchaînent</h4><p>« Bella », « Je s'en fou », « Tonssimè Chap » ft. NG Bling. Le gang grandit, le nom résonne.</p></div></div>
+        <div class="tl__item reveal" data-s="left"><div class="tl__yr">2019</div><div class="tl__dot"></div><div class="tl__card"><h4>« Madame » — renaissance</h4><p>Nouveau style mélodique. « Chéri Coco », « Tu mérites tout ». L'artiste complet se révèle.</p></div></div>
+        <div class="tl__item tl__item--gold reveal" data-s="right"><div class="tl__yr">2021</div><div class="tl__dot"></div><div class="tl__card"><h4>🏆 Artiste de l'année</h4><p>Bénin Top 10. 1er sacre. 4 nominations. Sans album — juste la force brute d'un vrai.</p></div></div>
+        <div class="tl__item tl__item--gold reveal" data-s="left"><div class="tl__yr">2022</div><div class="tl__dot"></div><div class="tl__card"><h4>🏆 2e sacre + Celtiis</h4><p>Artiste de l'année. Brand Ambassador Celtiis Bénin. La musique devient empire commercial.</p></div></div>
+        <div class="tl__item reveal" data-s="right"><div class="tl__yr">2023</div><div class="tl__dot"></div><div class="tl__card"><h4>Betclic × Universal</h4><p>Brand Ambassador Betclic France (+11M users). Universal Music Africa. Red Line Africa.</p></div></div>
+        <div class="tl__item tl__item--gold reveal" data-s="left"><div class="tl__yr">2024</div><div class="tl__dot"></div><div class="tl__card"><h4>🏆 Triple couronne — Fitè</h4><p>« Fitè » : 4,8M vues YouTube. 3e Artiste de l'année consécutif. Règne incontesté.</p></div></div>
+        <div class="tl__item tl__item--now reveal" data-s="right"><div class="tl__yr tl__yr--now">2025</div><div class="tl__dot tl__dot--pulse"></div><div class="tl__card tl__card--fin"><h4>10 ANS DU GANG</h4><p>Une décennie. Une légende vivante. Et le meilleur reste à venir.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── DEUX DEUX — LE CHEF DU GANG ── -->
+  <section id="deux-deux" class="deuxdeux">
+    <div class="deuxdeux__head reveal">
+      <span class="eyebrow">Portrait du Chef</span>
+      <h2 class="sec-title">Le Chef<br><span class="red">du Gang</span></h2>
+      <p class="deuxdeux__intro">Deux photos. Deux vérités. Un seul homme.</p>
+    </div>
+
+    <!-- Duo 1 -->
+    <div class="duo reveal">
+      <div class="duo__img">
+        <img src="assets/images/475373817_1154082422744865_9125130878477563226_n.jpg" alt="Vano Baby" loading="lazy">
+        <div class="duo__shine"></div>
+      </div>
+      <div class="duo__img">
+        <img src="assets/images/497441635_4186565828256072_2586940109471807164_n.jpg" alt="Vano Baby" loading="lazy">
+        <div class="duo__shine"></div>
+      </div>
+    </div>
+
+    <!-- Texte puissant 1 -->
+    <div class="deuxdeux__text reveal">
+      <div class="deuxdeux__block">
+        <h3>L'homme derrière le mythe</h3>
+        <p>
+          Il ne parle pas beaucoup. Il n'a pas besoin.
+          Sa musique parle pour lui, ses actes parlent à sa place.
+          Dix ans dans un milieu impitoyable — et il est toujours debout.
+          Pas par chance. Par <strong>caractère</strong>.
+        </p>
+        <p>
+          Vano Baby ne joue pas un rôle. Il n'a jamais joué un rôle.
+          Ce que vous voyez sur scène, dans les clips, dans les interviews —
+          c'est lui. Le vrai. L'authentique. Celui qui dormait avec la faim
+          et se réveillait avec l'ambition.
+        </p>
+      </div>
+    </div>
+
+    <!-- Duo 2 -->
+    <div class="duo reveal">
+      <div class="duo__img">
+        <img src="assets/images/502914193_4203418183237503_5394201249215089522_n.jpg" alt="Vano Baby" loading="lazy">
+        <div class="duo__shine"></div>
+      </div>
+      <div class="duo__img">
+        <img src="assets/images/494257127_1221813849305055_2265559598117504479_n.jpg" alt="Vano Baby" loading="lazy">
+        <div class="duo__shine"></div>
+      </div>
+    </div>
+
+    <!-- Texte puissant 2 -->
+    <div class="deuxdeux__text reveal">
+      <div class="deuxdeux__block">
+        <h3>Le Chef du Gang</h3>
+        <p>
+          Dans la rue, on reconnaît les vrais.
+          Les vrais n'ont pas besoin de crier. Ils posent leur musique — et les autres se taisent.
+          Vano Baby, c'est ça. Ce calme derrière lequel se cache un volcan.
+        </p>
+        <p>
+          <strong>Triple Artiste de l'année.</strong> Des millions de vues. Des contrats internationaux.
+          Mais ce qui définit le chef du gang, c'est pas les trophées.
+          C'est que chaque personne qui l'écoute se sent <em>comprise</em>.
+          Chaque chanson, c'est une vérité que tout le monde vivait mais que personne n'osait dire.
+        </p>
+      </div>
+    </div>
+
+    <!-- Duo 3 -->
+    <div class="duo reveal">
+      <div class="duo__img">
+        <img src="assets/images/495592494_1228173642002409_6177033167438008676_n.jpg" alt="Vano Baby" loading="lazy">
+        <div class="duo__shine"></div>
+      </div>
+      <div class="duo__img">
+        <img src="assets/images/502683041_4204473246465330_4675408307869096022_n.jpg" alt="Vano Baby" loading="lazy">
+        <div class="duo__shine"></div>
+      </div>
+    </div>
+
+    <!-- Grande citation -->
+    <div class="deuxdeux__quote reveal">
+      <blockquote>
+        "Ce n'est pas juste un public…<br>
+        c'est <span class="red">une famille.</span>"
+      </blockquote>
+      <cite>— Vano Baby, Le Sorcier Vivant</cite>
+    </div>
+
+  </section>
+
+  <!-- ── FAMILLE ── -->
+  <section id="famille" class="famille">
+    <div class="famille__wrap">
+      <div class="sec-head reveal">
+        <span class="eyebrow">Au-delà du gang</span>
+        <h2 class="sec-title">Derrière la légende…<br><em>il y a un père.</em></h2>
+        <p class="famille__sub">Sa fille est le déclencheur de tout. Son fils, la continuation de l'empire. Sans eux — rien de tout ça n'existe.</p>
+      </div>
+      <div class="famille__duo">
+        <div class="famille__card reveal">
+          <div class="famille__img"><img src="assets/images/fille.jpg" alt="La fille de Vano Baby" loading="lazy"><div class="famille__overlay"></div></div>
+          <div class="famille__cap"><span class="famille__role">Sa Fille</span><p>"C'est elle qui m'a poussé vers le succès. Tout a commencé pour elle."</p></div>
+        </div>
+        <div class="famille__card reveal">
+          <div class="famille__img"><img src="assets/images/garcon.jpg" alt="Le fils de Vano Baby" loading="lazy"><div class="famille__overlay"></div></div>
+          <div class="famille__cap"><span class="famille__role">Son Fils</span><p>"Je voulais être le père que j'aurais voulu avoir. C'est ma force quotidienne."</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── MUSIQUE ── -->
+  <section id="musique" class="musique">
+    <div class="musique__wrap">
+      <div class="sec-head reveal"><span class="eyebrow">Clips officiels</span><h2 class="sec-title">Musique</h2></div>
+      <div class="vids">
+        <article class="vid reveal">
+          <div class="vid__thumb" data-vid="-pXxmqxEYsk">
+            <img src="https://i.ytimg.com/vi/-pXxmqxEYsk/maxresdefault.jpg" alt="Madame" loading="lazy">
+            <div class="vid__mask"><button class="vid__play" aria-label="Lire Madame"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+          </div>
+          <div class="vid__embed" hidden><iframe title="Madame" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen data-src="https://www.youtube-nocookie.com/embed/-pXxmqxEYsk?enablejsapi=1&autoplay=1&rel=0"></iframe></div>
+          <div class="vid__info"><h3>Madame</h3><p>2019 · Le tournant mélodique</p></div>
+        </article>
+        <article class="vid reveal">
+          <div class="vid__thumb" data-vid="HCSr8UR3y94">
+            <img src="https://i.ytimg.com/vi/HCSr8UR3y94/maxresdefault.jpg" alt="Bella" loading="lazy">
+            <div class="vid__mask"><button class="vid__play" aria-label="Lire Bella"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+          </div>
+          <div class="vid__embed" hidden><iframe title="Bella" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen data-src="https://www.youtube-nocookie.com/embed/HCSr8UR3y94?enablejsapi=1&autoplay=1&rel=0"></iframe></div>
+          <div class="vid__info"><h3>Bella</h3><p>2017 · Énergie brute</p></div>
+        </article>
+        <article class="vid reveal">
+          <div class="vid__thumb" data-vid="_YjflmrNHmI">
+            <img src="https://i.ytimg.com/vi/_YjflmrNHmI/maxresdefault.jpg" alt="Chéri Coco" loading="lazy">
+            <div class="vid__mask"><button class="vid__play" aria-label="Lire"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+          </div>
+          <div class="vid__embed" hidden><iframe title="Chéri Coco" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen data-src="https://www.youtube-nocookie.com/embed/_YjflmrNHmI?enablejsapi=1&autoplay=1&rel=0"></iframe></div>
+          <div class="vid__info"><h3>Chéri Coco</h3><p>2020 · Afrobeats anthologie</p></div>
+        </article>
+        <article class="vid reveal">
+          <div class="vid__thumb" data-vid="L6B4MsYQ8Fk">
+            <img src="https://i.ytimg.com/vi/L6B4MsYQ8Fk/maxresdefault.jpg" alt="Tu mérites tout" loading="lazy">
+            <div class="vid__mask"><button class="vid__play" aria-label="Lire"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button></div>
+          </div>
+          <div class="vid__embed" hidden><iframe title="Tu mérites tout" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen data-src="https://www.youtube-nocookie.com/embed/L6B4MsYQ8Fk?enablejsapi=1&autoplay=1&rel=0"></iframe></div>
+          <div class="vid__info"><h3>Tu mérites tout</h3><p>2021 · Hymne aux fans</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── GALERIE ── -->
+  <section id="galerie" class="galerie">
+    <div class="galerie__wrap">
+      <div class="sec-head reveal"><span class="eyebrow">Visuels</span><h2 class="sec-title">Galerie</h2></div>
+      <div class="gal">
+        <div class="gi reveal"><img src="assets/images/481455860_1180010393485401_8328970904668463409_n.jpg" loading="lazy" alt=""></div>
+        <div class="gi reveal"><img src="assets/images/481941188_1179863596833414_9003218124600323320_n.jpg" loading="lazy" alt=""></div>
+       <div class="gi gi--wide reveal"><img src="assets/images/648785603_1468980507921720_8983027449429878059_n.jpg" loading="lazy" alt=""></div>
+        <div class="gi reveal"><img src="assets/images/606018683_1411281413691630_5067240984446169854_n.jpg" loading="lazy" alt=""></div>
+        <div class="gi reveal"><img src="assets/images/516406131_18484441408070102_5625106205095065288_n.jpg" loading="lazy" alt=""></div>
+        <div class="gi reveal"><img src="assets/images/650171841_1466936848126086_365842473339802552_n.jpg" loading="lazy" alt=""></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ── -->
+  <section id="contact" class="contact">
+    <div class="contact__wrap">
+      <div class="sec-head reveal"><span class="eyebrow">Rejoindre l'empire</span><h2 class="sec-title">Contact</h2></div>
+      <div class="contact__body reveal">
+        <div class="contact__left">
+          <p class="contact__txt">Booking, presse, collaborations — contactez l'équipe officielle du Sorcier Vivant.</p>
+          <a href="mailto:vanobabyoff@gmail.com" class="contact__mail">vanobabyoff@gmail.com</a>
+        </div>
+        <div class="contact__socials">
+          <a href="https://www.youtube.com/@vanobaby" target="_blank" rel="noopener" class="soc">
+            <div class="soc__ico soc__ico--yt"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></div>
+            <div><b>YouTube</b><span>@vanobaby</span></div>
+          </a>
+          <a href="https://www.tiktok.com/@vano229officiel7" target="_blank" rel="noopener" class="soc">
+            <div class="soc__ico soc__ico--tt"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.525.02c1.31-.02 2.61-.01 3.918-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48.04 2.96.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></div>
+            <div><b>TikTok</b><span>@vano229officiel7</span></div>
+          </a>
+          <a href="https://open.spotify.com/search/Vano%20Baby" target="_blank" rel="noopener" class="soc">
+            <div class="soc__ico soc__ico--sp"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg></div>
+            <div><b>Spotify</b><span>Vano Baby</span></div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER AVEC PHOTO + MOT DE L'ÉQUIPE ── -->
+  <footer class="footer">
+    <!-- Image de fond du footer -->
+    <div class="footer__bg">
+      <img src="assets/images/472649002_18452379229070102_109520245349795833_n.jpg" alt="" aria-hidden="true">
+      <div class="footer__bg-overlay"></div>
+    </div>
+
+    <div class="footer__inner">
+
+      <!-- Mot de l'équipe -->
+      <div class="footer__letter reveal">
+        <span class="footer__letter-label">Un mot de notre part</span>
+        <h3 class="footer__letter-title">À vous, Grand-frère Vano.</h3>
+        <p>
+          On vous a vu traverser des moments que la plupart des gens n'imaginent même pas.
+          Les nuits sans sommeil, les doutes que vous cachiez derrière des sourires,
+          les sacrifices que personne ne voit — mais que tout le monde ressent dans votre musique.
+        </p>
+        <p>
+          Depuis les premiers pas hésitants sur une scène de basket avec du stress plein les mains,
+          jusqu'aux salles qui vous connaissaient <em>avant même de voir votre visage</em> —
+          vous n'avez jamais arrêté. Jamais abandonné. Jamais trahi votre identité et votre personne.
+        </p>
+        <p>
+          Vous avez prouvé que le talent, ça ne suffit pas. Qu'il faut aussi l'<strong>obstination</strong>,
+          la <strong>foi</strong>, et cette flamme qui ne s'éteint pas même quand tout le reste s'obscurcit et que tout semble contre vous.
+        </p>
+        <p>
+          Aujourd'hui, <strong>10 ans</strong>. Pas 10 ans de carrière.
+          10 ans de résistance. 10 ans d'authenticité. 10 ans à prouver au Bénin —
+          et au monde — qu'une voix de Grand-Popo peut faire trembler les foules.
+        </p>
+        <p class="footer__letter-sign">
+          Merci de nous rappeler ce que ça veut dire de <strong>croire</strong>.<br>
+          <em>Le Gang est fier de vous.</em><br>
+          <a href="mailto:cyrusyoupassogba@gmail.com" class="footer__letter-author">A.Cyrus-y</a>
+        </p>
+      </div>
+
+      <!-- Infos footer -->
+      <div class="footer__bottom">
+        <p class="footer__logo">VANO <em>BABY</em></p>
+        <p class="footer__copy">© <span id="yr"></span> Vano Baby — Le Sorcier Vivant &nbsp;·&nbsp; 10 Ans du Gang</p>
+        <a href="#hero" class="footer__up">↑ TOP</a>
+      </div>
+
+    </div>
+  </footer>
+
+</div><!-- /site -->
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

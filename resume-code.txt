@@ -1,0 +1,223 @@
+RESUME DU CODE DU PROJET
+
+1. FICHIER index.html
+
+Le fichier `index.html` contient toute la structure principale du site.
+
+Il est organise en plusieurs grandes parties :
+
+- un curseur personnalise avec `#cur` et `#cur2`
+- un lecteur audio avec `#snd`
+- un bouton musique avec `#snd-btn`
+- une fenetre de choix avec `#music-modal`
+- une page d'entree appelee `splash`
+- le vrai site dans `#site`
+
+Le site principal contient ensuite plusieurs sections :
+
+- `header.nav` : la barre de navigation
+- `section.hero` : le grand header avec les images
+- `section.story` : l'histoire
+- `section.parcours` : la timeline
+- `section.deuxdeux` : la partie portrait
+- `section.famille` : la famille
+- `section.musique` : les videos
+- `section.galerie` : les images
+- `section.contact` : les liens de contact
+- `footer` : le pied de page
+
+
+2. FICHIER css/styles.css
+
+Le fichier `styles.css` gere tout le visuel du site.
+
+Au debut, il y a des variables CSS dans `:root`.
+Elles servent a centraliser :
+
+- les couleurs
+- les polices
+- certaines tailles
+- le placement des images
+
+Ensuite le CSS est range par blocs.
+
+Exemples :
+
+- `.cur` et `.cur2` : style du curseur personnalise
+- `.snd-btn` : style du bouton musique
+- `.mmodal` : style de la fenetre qui demande si on veut lire la musique
+- `.splash...` : style de la page d'entree
+- `.nav...` : style de la navigation
+- `.hero...` : style du header principal
+- `.story`, `.sch...` : style des blocs histoire
+- `.parcours`, `.tl...` : style de la timeline
+- `.duo...` et `.deuxdeux...` : style des portraits
+- `.famille...` : style de la section famille
+- `.musique...` et `.vid...` : style des videos
+- `.galerie...` et `.gi...` : style de la galerie
+- `.contact...` : style de la zone contact
+- `.footer...` : style du pied de page
+
+Il y a aussi plusieurs `@media` pour adapter l'affichage sur tablette et mobile.
+
+Important :
+
+- les images du hero sont mises en fond avec `object-fit: cover`
+- sur ordinateur, elles ont ete legerement reduites pour qu'on les voie un peu mieux
+- le bouton musique reste visible apres l'entree dans le site
+
+
+3. FICHIER js/main.js
+
+Le fichier `main.js` gere les interactions du site.
+
+Le code est dans une fonction auto executee :
+
+`(function () { ... })();`
+
+Cela evite de mettre plein de variables dans le scope global.
+
+
+4. PARTIE AUDIO
+
+Variables principales :
+
+- `AUDIO_SRC` : nom du fichier audio
+- `AUDIO_VOL` : volume
+- `snd` : element audio HTML
+- `sndBtn` : bouton musique
+
+Fonctions importantes :
+
+- `loadAudio()` : charge le fichier audio
+- `playAudio()` : lance la musique
+- `pauseAudio()` : met en pause
+- `resumeAudio()` : relance si besoin
+- `sndUI(playing)` : met a jour l'etat visuel du bouton
+
+Quand on clique sur le bouton musique :
+
+- si la musique est en pause, elle se lance
+- si la musique joue, elle se coupe
+
+
+5. FENETRE "LIRE LA MUSIQUE ?"
+
+La fonction `showMusicModal(cb)` ouvre la fenetre.
+
+Si l'utilisateur clique sur :
+
+- `Oui` : on entre dans le site avec musique
+- `Non` : on entre dans le site sans musique
+
+Mais maintenant, meme si on clique sur `Non`,
+le bouton musique reste visible pour pouvoir lancer la musique plus tard.
+
+
+6. ENTREE DANS LE SITE
+
+La fonction `enterSite(withMusic)` fait la transition entre la page d'entree et le vrai site.
+
+Elle :
+
+- lance la musique si besoin
+- cache le splash
+- affiche le site principal
+- active le bouton musique
+- lance les autres fonctions du site
+
+
+7. NAVIGATION
+
+La partie navigation est geree par :
+
+- `setNav(open)`
+- `initNav()`
+
+Elle sert a :
+
+- ouvrir/fermer le menu mobile
+- ajouter un fond a la nav quand on scrolle
+- faire un scroll fluide sur les ancres
+
+
+8. VIDEOS
+
+La section videos utilise YouTube avec des `iframe`.
+
+Fonctions utiles :
+
+- `stopOtherVideos(except)` : arrete les autres videos
+- `listenVideoState(iframe)` : ecoute l'etat de lecture
+- `initVideos()` : active les clics sur les miniatures
+
+Quand une video est lancee :
+
+- la musique du site se met en pause
+- quand la video se termine ou se met en pause, la musique peut reprendre
+
+
+9. CURSEUR PERSONNALISE
+
+Le curseur personnalise est gere par :
+
+- `initCursor()`
+- `updateCursorTargets()`
+
+Le premier point suit la souris.
+Le deuxieme agrandit le curseur sur certains elements interactifs.
+
+
+10. ANIMATIONS D'APPARITION
+
+La fonction `initReveal()` utilise `IntersectionObserver`.
+
+Elle sert a afficher doucement les elements quand ils entrent dans l'ecran.
+
+Les elements concernes ont souvent la classe :
+
+- `.reveal`
+
+Et quand ils deviennent visibles, le JS ajoute :
+
+- `.vis`
+
+
+11. DIAPORAMA DU HERO
+
+La fonction `initHeroSlideshow()` gere les images du header principal.
+
+Elle :
+
+- recupere les images `.hero__slide`
+- recupere les points `.hero__dot`
+- change l'image active toutes les quelques secondes
+
+Le CSS gere le fondu et le zoom leger.
+
+
+12. RESUME SIMPLE DU FONCTIONNEMENT GENERAL
+
+En gros :
+
+- le HTML cree la structure
+- le CSS gere toute la presentation
+- le JS gere les interactions
+
+Le parcours du visiteur est :
+
+1. il arrive sur la page d'entree
+2. il clique pour entrer
+3. il choisit ou non de lire la musique
+4. le site principal apparait
+5. il peut naviguer, regarder les videos, voir les images et les sections
+
+
+13. POINTS IMPORTANTS A RETENIR
+
+- `index.html` = structure du site
+- `css/styles.css` = apparence
+- `js/main.js` = comportement
+- le bouton musique est maintenant toujours accessible apres l'entree
+- le hero desktop a ete legerement ajuste pour mieux voir les images
+

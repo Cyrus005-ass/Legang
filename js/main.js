@@ -76,6 +76,7 @@
       splash.style.display = 'none';
       site.classList.remove('site--hidden');
       site.classList.add('show');
+      if (navEl) navEl.classList.remove('nav--splash');
       if (sndBtn) sndBtn.classList.add('on');
       if (!withMusic) sndUI(false);
       window.scrollTo(0, 0);
@@ -247,6 +248,7 @@
   initNav();
 
   if (site && !site.classList.contains('site--hidden')) {
+    if (navEl) navEl.classList.remove('nav--splash');
     initReveal(); initVideos(); initHeroSlideshow(); updateCursorTargets();
   }
 })();

@@ -282,8 +282,9 @@ button{border:none;background:none;font:inherit;cursor:none}
    SITE (caché par défaut)
 ════════════════════════════════════════════ */
 .site--hidden{display:none}
+/* to: transform:none — sinon translateY(0) garde un transform sur .site et casse position:fixed des enfants (nav) */
 .site.show{display:block;animation:siteIn .6s var(--ease) forwards}
-@keyframes siteIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@keyframes siteIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
 
 /* Site principal : pas de débordement horizontal, marge basse encoche */
 .site{
@@ -292,12 +293,15 @@ button{border:none;background:none;font:inherit;cursor:none}
 }
 
 /* ── NAV ── */
-/* Barre nav : hauteur + encoche (iPhone) */
+/* Hors de #site : fixed ancré à la fenêtre, immobile au scroll */
+.nav.nav--splash{display:none}
 .nav{
   position:fixed;
   top:0;
   left:0;
   right:0;
+  width:100%;
+  max-width:100vw;
   z-index:800;
   padding-top:var(--safe-top);
   min-height:calc(var(--nh) + var(--safe-top));
@@ -326,12 +330,22 @@ button{border:none;background:none;font:inherit;cursor:none}
 .burger.open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
 @media(max-width:768px){
   :root{ --nh: 56px; }
+  /* Barre toujours visible au scroll (lisible sur le hero) */
+  .nav{
+    background:rgba(7,7,7,.96);
+    border-bottom:1px solid var(--bd);
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+  }
+  .nav__logo,
+  .burger{position:relative;z-index:801}
   .nav__logo{font-size:1.28rem}
   .burger{display:flex}
   .nav__links{
     position:fixed;
     top:calc(var(--nh) + var(--safe-top));
     left:0;right:0;
+    z-index:800;
     max-height:calc(100dvh - var(--nh) - var(--safe-top));
     overflow-y:auto;
     flex-direction:column;
@@ -1106,6 +1120,20 @@ button{border:none;background:none;font:inherit;cursor:none}
   .famille__cap p{ font-size:.9rem; line-height:1.55; }
   .contact__mail{ font-size:clamp(1.15rem,6vw,1.65rem); word-break:break-word; }
   .footer{ padding:var(--section-pad-y) 0 calc(2rem + var(--safe-bottom)); }
+  /* Photo de fond : centrée au cadre mobile + un peu plus lumineuse */
+  .footer__bg img{
+    object-position:center center;
+    filter:brightness(0.64) contrast(1.06) saturate(0.94);
+    transform:none;
+  }
+  .footer__bg-overlay{
+    background:linear-gradient(
+      180deg,
+      rgba(7,7,7,.2) 0%,
+      rgba(7,7,7,.4) 42%,
+      rgba(7,7,7,.68) 100%
+    );
+  }
   .footer__inner{ width:min(860px,100% - 2rem); }
   .footer__letter{ padding:1.35rem; margin-bottom:2rem; }
   .footer__letter p{ font-size:.95rem; line-height:1.8; color:rgba(255,255,255,.78); }
